@@ -11,7 +11,7 @@ class ApplicationController < Sinatra::Base
 
   get '/cars/:id' do
     car = Car.find(params[:id])
-    car.to_json
+    car.to_json(include: :comments)
   end
   
   get '/category/:id' do
@@ -21,14 +21,14 @@ class ApplicationController < Sinatra::Base
   end
 
 
-  #DELETE REQUESTS
+  # DELETE REQUESTS
   delete '/delete/:id' do
     car = Car.find(params[:id])
     car.destroy
     car.to_json
   end
 
-  #POST REQUESTS
+  # POST REQUESTS
   post '/addcar' do
     
     car = Car.create(
@@ -40,6 +40,15 @@ class ApplicationController < Sinatra::Base
       info: params[:info],
       category: Category.find_by(name: params[:category]) 
     )
+  end
+
+  post '/car/addcomment/:id' do
+    comment = Comment.create(
+      content: params[:content],
+      user_name: params[:user_name],
+      car: Car.find_by(id: params[:id])
+    )
+  
   end
 
 end

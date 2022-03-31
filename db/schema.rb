@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_28_171842) do
+ActiveRecord::Schema.define(version: 2022_03_30_221105) do
 
   create_table "cars", force: :cascade do |t|
     t.string "model"
@@ -24,6 +24,12 @@ ActiveRecord::Schema.define(version: 2022_03_28_171842) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "content"
+    t.string "user_name"
+    t.integer "car_id"
   end
 
 end

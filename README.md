@@ -1,109 +1,26 @@
-# Phase 3 Project Guidelines
+# Hard Park
+This repo is only the backend of the project, you can find the React frontend [here](https://github.com/kadeesterline/hard-park-front-end)
 
-## Learning Goals
+After cloning down both repos run the following commands from within the directory for this project:
+<code>bundle install</code><br />
+<code>rake db:migrate</code><br />
+<code>rake db:seed</code><br />
+<code>rake server</code><br />
 
-- Build a web basic API with Sinatra and Active Record to support a React
-  frontend
+Running these commands will install dependecies, create the schema for the database and seed the database with data you can find in the seeds.rb file. The server will start at [http://localhost:9292](http://localhost:9292)<br />
 
-## Introduction
+Instructions for starting the react frontend can be found in that repo's README.
 
-Congrats on getting through all the material for Phase 3! Now's the time to put
-it all together and build something from scratch to reinforce what you know and
-expand your horizons.
+# About
+This API is very simple utilizing Sinatra and just 3 models for the time being. There are 6 different endpoints that can be found in the application_controller.rb file.
 
-The focus of this project is **building a Sinatra API backend** that uses
-**Active Record** to access and persist data in a database, which will be used
-by a separate **React frontend** that interacts with the database via the API.
 
-## Requirements
+## Contributors
+Kade Esterline: [LinkedIn](https://www.linkedin.com/in/kade-esterline/), [Dev.to](https://dev.to/kadeesterline) <br />
 
-For this project, you must:
+## Contributing
+Currently this is a personal project with no plans of allowing others to contribute.
 
-- Use Active Record to interact with a database.
-- Have a minimum of two models with a one-to-many relationship.
-- Create API routes in Sinatra that handles at least three different CRUD
-  actions for at least one of your Active Record models.
-- Build a separate React frontend application that interacts with the API to
-  perform CRUD actions.
-- Use good OO design patterns. You should have separate classes for each of your
-  models, and create instance and class methods as necessary.
-
-For example, build a todo list application with a React frontend interface and a
-Sinatra backend API, where a user can:
-
-- **Create** a new todo
-- **Read** a list of all todos
-- **Update** an individual todo
-- **Delete** a todo
-
-A `Todo` can be tagged with a `Category`, so that each todo _belongs to_ a
-category and each category _has many_ todos.
-
-## Getting Started
-
-### Backend Setup
-
-This repository has all the starter code needed to get a Sinatra backend up and
-running. [**Fork and clone**][fork link] this repository to get started. Then, run
-`bundle install` to install the gems.
-
-[fork link]: https://github.com/learn-co-curriculum/phase-3-sinatra-react-project/fork
-
-The `app/controllers/application_controller.rb` file has an example GET route
-handler. Replace this route with routes for your project.
-
-You can start your server with:
-
-```console
-$ bundle exec rake server
-```
-
-This will run your server on port
-[http://localhost:9292](http://localhost:9292).
-
-### Frontend Setup
-
-Your backend and your frontend should be in **two different repositories**.
-
-Create a new repository in a **separate folder** with a React app for your
-frontend. `cd` out of the backend project directory, and use
-[create-react-app][] to generate the necessary code for your React frontend:
-
-```console
-$ npx create-react-app my-app-frontend
-```
-
-After creating the project locally, you should also
-[create a repository on GitHub][create repo] to host your repo and help
-collaborate, if you're working with a partner.
-
-### Fetch Example
-
-Your React app should make fetch requests to your Sinatra backend! Here's an
-example:
-
-```js
-fetch("http://localhost:9292/test")
-  .then((r) => r.json())
-  .then((data) => console.log(data));
-```
-
-## Project Tips
-
-- This project is intended to focus more on the backend than the frontend, so
-  try and keep the React side of things relatively simple. Focus on working with
-  Active Record and performing CRUD actions. What are some interesting queries you can write? What kinds of questions can you ask of your data?
-- Once you have a project idea, come up with a domain model and decide what
-  relationships exist between the models in your application. Use a tool like
-  [dbdiagram.io][] to help visualize your models.
-- Decide on your API endpoints. What data should they return? What kind of CRUD
-  action should they perform? What data do they need from the client?
-- Use [Postman][postman download] to test your endpoints.
-- Use `binding.pry` to debug your requests on the server. It's very helpful to use a
-  `binding.pry` in your controller within a route to see what `params` are being
-  sent.
-- Use the [Network Tab in the Dev Tools][network tab] in the frontend to debug
-  your requests.
 
 ## Resources
 

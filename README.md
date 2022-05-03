@@ -12,7 +12,7 @@ Running these commands will install dependecies, create the schema for the datab
 Instructions for starting the react frontend can be found in that repo's README.
 
 # About
-This API is very simple utilizing Sinatra and just 3 models for the time being. There are 6 different endpoints that can be found in the application_controller.rb file.
+This API is very simple utilizing Sinatra and just 3 models. There are 6 different endpoints that can be found in the application_controller.rb file. This API was built as the backend of a react app for the third phase of my time at Flatiron. The app is meant to be a social media of sorts with a focus on cars. For the full experience I would recommend using both, however, using a tool like post man you can query the API and see the responses.
 
 
 ## Contributors
